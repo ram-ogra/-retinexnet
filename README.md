@@ -197,13 +197,6 @@ streamlit >= 1.32.0
 |---|---|---|
 | NVIDIA RTX 3060 | ~18 ms | ~65 ms |
 | CPU (i7-12700) | ~320 ms | ~1200 ms |
-
----
-
-## 📄 License
-
-MIT License © 2024 — Free to use, modify, and distribute.
-
 ---
 
 <div align="center">
