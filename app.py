@@ -214,13 +214,13 @@ def main():
         d1,d2,d3 = st.columns(3)
         with d1:
             st.download_button("⬇️ Enhanced PNG",  np_to_bytes(results["enhanced"],"PNG"),
-                               "enhanced.png","image/png", use_container_width=True)
+                               "enhanced.png","image/png", use_container_width=True, key="dl_enh_png")
         with d2:
             st.download_button("⬇️ Enhanced JPEG", np_to_bytes(results["enhanced"],"JPEG"),
-                               "enhanced.jpg","image/jpeg", use_container_width=True)
+                               "enhanced.jpg","image/jpeg", use_container_width=True, key="dl_enh_jpg")
         with d3:
             st.download_button("⬇️ Reflectance",   np_to_bytes(results["reflectance"],"PNG"),
-                               "reflectance.png","image/png", use_container_width=True)
+                               "reflectance.png","image/png", use_container_width=True, key="dl_refl_tab1")
 
     with tab2:
         st.markdown("**Image = Reflectance × Illumination** — DecomNet splits these layers.")
@@ -231,15 +231,15 @@ def main():
         d1,d2,d3 = st.columns(3)
         with d1:
             st.download_button("⬇️ Reflectance", np_to_bytes(results["reflectance"]),
-                               "reflectance.png","image/png", use_container_width=True)
+                               "reflectance.png","image/png", use_container_width=True, key="dl_refl_tab2")
         with d2:
             st.download_button("⬇️ Illumination",
                                np_to_bytes(illumination_to_rgb(results["illumination"])),
-                               "illumination.png","image/png", use_container_width=True)
+                               "illumination.png","image/png", use_container_width=True, key="dl_illu")
         with d3:
             st.download_button("⬇️ Enh. Illumination",
                                np_to_bytes(illumination_to_rgb(results["enhanced_illumination"])),
-                               "enh_illumination.png","image/png", use_container_width=True)
+                               "enh_illumination.png","image/png", use_container_width=True, key="dl_eillu")
 
     with tab3:
         orig_u8 = (np.clip(results["original"],  0,1)*255).astype(np.uint8)
